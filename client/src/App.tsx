@@ -1,7 +1,21 @@
-export default function App() {
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import RPS from './pages/RPS'
+import Whiteboard from './pages/Whiteboard'
+import { div } from 'framer-motion/client'
+const App = () => {
+
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold">Mini Games Hub</h1>
-    </div>
-  );
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/games/rps' element={<RPS/>}/>
+        <Route path='/games/whiteboard' element={<Whiteboard/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
+
+export default App
